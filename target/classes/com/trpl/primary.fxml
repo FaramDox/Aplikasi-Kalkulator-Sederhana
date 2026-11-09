@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="12" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trpl.PrimaryController">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+    <children>
+        <!-- Layar Display Kalkulator -->
+        <TextField fx:id="display" editable="false" alignment="CENTER_RIGHT" 
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-pref-height: 50px;" text="0" />
+
+        <!-- Grid Tombol -->
+        <GridPane hgap="8" vgap="8">
+            <!-- Baris 0: Clear & Operator dasar -->
+            <Button text="C" onAction="#processClear" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px; -fx-background-color: #ff6666; -fx-text-fill: white;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Button text="/" onAction="#processOperator" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Button text="*" onAction="#processOperator" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <Button text="-" onAction="#processOperator" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+            <!-- Baris 1: Angka 7, 8, 9, Tombol + -->
+            <Button text="7" onAction="#processNumber" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Button text="8" onAction="#processNumber" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Button text="9" onAction="#processNumber" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <Button text="+" onAction="#processOperator" prefWidth="55" prefHeight="98" style="-fx-font-size: 14px;" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.rowSpan="2"/>
+
+            <!-- Baris 2: Angka 4, 5, 6 -->
+            <Button text="4" onAction="#processNumber" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <Button text="5" onAction="#processNumber" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Button text="6" onAction="#processNumber" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+            <!-- Baris 3: Angka 1, 2, 3, Tombol = -->
+            <Button text="1" onAction="#processNumber" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <Button text="2" onAction="#processNumber" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <Button text="3" onAction="#processNumber" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+            <Button text="=" onAction="#processOperator" prefWidth="55" prefHeight="98" style="-fx-font-size: 14px; -fx-background-color: #4CAF50; -fx-text-fill: white;" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.rowSpan="2"/>
+
+            <!-- Baris 4: Angka 0 dan Titik Desimal -->
+            <Button text="0" onAction="#processNumber" prefWidth="118" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+            <Button text="." onAction="#processNumber" prefWidth="55" prefHeight="45" style="-fx-font-size: 14px;" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+        </GridPane>
+    </children>
+</VBox>
